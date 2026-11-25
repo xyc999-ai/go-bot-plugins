@@ -1,1 +1,137 @@
-[]
+[
+  {
+    "pluginId": "agent-browser",
+    "package": "@go-bot/plugin-agent-browser",
+    "name": "agent-browser",
+    "description": {
+      "en": "Browse websites, interact with pages, capture screenshots and download files with the official CLI and upstream Skill.",
+      "zh-CN": "通过官方 CLI 和原始 Skill 浏览网页、操作页面、截图与下载文件。"
+    },
+    "icon": "/assets/plugins/agent-browser/icon.png",
+    "version": "0.1.0",
+    "maintainer": "Go Bot",
+    "license": "MIT",
+    "source": {
+      "type": "tarball",
+      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/agent-browser-v0.1.0/go-bot-plugin-agent-browser-0.1.0.tgz"
+    },
+    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/agent-browser-v0.1.0/",
+    "builds": [
+      "@go-bot/plugin-agent-browser"
+    ],
+    "defaultEnabled": true
+  },
+  {
+    "pluginId": "officecli",
+    "package": "@go-bot/plugin-officecli",
+    "name": "OfficeCLI",
+    "description": {
+      "en": "Create, read and edit Word, PowerPoint and Excel with the official CLI and 11 upstream Skills.",
+      "zh-CN": "通过官方 CLI 和 11 个原始 Skills 创建、读取和编辑 Word、PPT、Excel。"
+    },
+    "icon": "/assets/plugins/officecli/icon.png",
+    "version": "0.1.0",
+    "maintainer": "Go Bot",
+    "license": "MIT",
+    "source": {
+      "type": "tarball",
+      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/officecli-v0.1.0/go-bot-plugin-officecli-0.1.0.tgz"
+    },
+    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/officecli-v0.1.0/",
+    "builds": [
+      "@go-bot/plugin-officecli"
+    ],
+    "defaultEnabled": true
+  },
+  {
+    "pluginId": "x",
+    "package": "@go-bot/plugin-x",
+    "name": "X",
+    "description": {
+      "en": "Connect X with the official xurl MCP bridge and native account authorization.\n\n1. Create an app at [X Developer Portal](https://developer.x.com/) and enable OAuth 2.0 user authentication. Choose the app permissions you need. Native App (public client) is the default connection type.\n2. Register `http://localhost:8080/callback` as the callback URL. Obtain your Client ID. A Native App does not need a Client Secret.\n3. Install and enable X. Open Accounts and authorization. Keep Native App (no Client Secret) selected and authorize; first connection asks only for the Client ID. If your developer app is a Web App / confidential client, select that authorization method instead; only this method asks for a Client Secret. Saved application credentials are reused on later connections.\n4. Open the authorization link in your browser, sign in to X and approve access. Paste the complete redirect URL back into the panel, even if its localhost page cannot open. Submit it immediately: X authorization codes expire after 30 seconds.\n\nxurl saves the application settings and account tokens in your Host and refreshes tokens natively. Subsequent authorization reuses the application configuration. Disconnect removes only the active account token. X API usage is billed to your developer application/account; review its access, credits and spending limit.\n\nUpstream guide: [xurl authentication](https://github.com/xdevplatform/xurl#authentication)\n\nRetrieved content enters your Agent context and may be processed by your selected model provider.",
+      "zh-CN": "通过官方 xurl MCP 桥连接 X，使用原生账号授权。\n\n1. 在 [X Developer Portal](https://developer.x.com/) 创建应用，启用 OAuth 2.0 用户认证并选择需要的应用权限，默认采用 Native App（公共客户端）连接。\n2. 登记回调地址 `http://localhost:8080/callback`，获取 Client ID。Native App 无需 Client Secret。\n3. 安装并启用 X，打开「账号与授权」，保留默认的「Native App（无需 Client Secret）」并发起授权，首次连接只需填写 Client ID。如果开发者应用属于 Web App／机密客户端，改选对应授权方式，才会要求填写 Client Secret；后续连接复用已保存的应用凭证。\n4. 在自己的浏览器中打开授权链接，登录 X 并同意权限。将完整回跳地址粘贴回面板，即使 localhost 页面打不开。请立即提交，X 授权码只有 30 秒有效。\n\nxurl 在你的 Host 中原生保存应用配置与账号令牌，并刷新令牌；后续授权复用应用配置。退出授权只移除当前账号令牌。X API 调用由你自己的开发者应用/账户计费，请核对访问权限、额度与消费限额。\n\n上游指引：[xurl authentication](https://github.com/xdevplatform/xurl#authentication)\n\n检索内容会进入你的 Agent 上下文，并可能交给你选择的模型服务处理。"
+    },
+    "icon": "/assets/plugins/x/icon.png",
+    "version": "0.1.1",
+    "maintainer": "Go Bot",
+    "license": "MIT",
+    "tutorials": [
+      {
+        "language": "en",
+        "title": "Configure your X OAuth application (before Save)",
+        "video": "/assets/plugins/x/account-setup.en.mp4",
+        "poster": "/assets/plugins/x/account-setup.en.png"
+      },
+      {
+        "language": "zh-CN",
+        "title": "配置自己的 X OAuth 应用（录至保存前）",
+        "video": "/assets/plugins/x/account-setup.zh-CN.mp4",
+        "poster": "/assets/plugins/x/account-setup.zh-CN.png"
+      }
+    ],
+    "source": {
+      "type": "tarball",
+      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/x-v0.1.1/go-bot-plugin-x-0.1.1.tgz"
+    },
+    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/x-v0.1.1/",
+    "builds": [
+      "@go-bot/plugin-x"
+    ]
+  },
+  {
+    "pluginId": "google-workspace",
+    "package": "@go-bot/plugin-google-workspace",
+    "name": "Google Workspace",
+    "description": {
+      "en": "Use Gmail, Drive, Calendar, Docs, Sheets and Slides with the official gws CLI and upstream Skills.\n\n1. Create or select your own project at [Google Cloud Console](https://console.cloud.google.com/). In APIs & Services → Library, enable only the APIs you need: Drive, Gmail, Calendar, Docs, Sheets or Slides.\n2. Configure Google Auth Platform branding and an External audience. While the app is in Testing, add the Google account email you will sign in with under Audience → Test users. This is your Google email, not your Go Bot username.\n3. Open Clients → Create client → Desktop app. Download and keep the OAuth client JSON immediately after creation; an existing client may no longer offer the original secret for download. See [Desktop OAuth client guide](https://developers.google.com/workspace/guides/create-credentials#desktop-app).\n4. Install and enable this plugin. Open Accounts and authorization → Connect Google account. On Web, choose the downloaded JSON file to parse and submit it automatically. On mobile, paste its contents into the protected input on first connection; later connections reuse your native configuration.\n5. Choose read-only or read-and-write permissions. Open the link in your browser, sign in to Google and approve access.\n6. Copy the complete localhost redirect URL from the address bar into the panel, even if the local page cannot open.\n\nThe project does not supply a shared OAuth application. gws stores your application configuration and account tokens in your Host and refreshes tokens natively. Never paste credentials in chat.\n\nEnable APIs as needed; a disabled API cannot be used even after account authorization. Google controls quotas, app verification and organization access. Personal Google accounts are supported; these features do not require a paid Workspace subscription. The upstream CLI is not an officially supported Google product.\n\nUpstream guide: [gws authentication](https://github.com/googleworkspace/cli#authentication)\n\nRetrieved content enters your Agent context and may be processed by your selected model provider.",
+      "zh-CN": "通过原生 gws CLI 和上游 Skills 使用 Gmail、Drive、日历、文档、表格与幻灯片。\n\n1. 在 [Google Cloud Console](https://console.cloud.google.com/) 创建或选择自己的项目。在「API 和服务 → 库」中按需启用 Drive、Gmail、Calendar、Docs、Sheets 或 Slides API，无需一次全部开启。\n2. 配置 Google Auth Platform 的品牌信息与「外部」受众。应用处于「测试」状态时，在「受众 → 测试用户」中添加准备登录的 Google 邮箱。这里不是 Go Bot 本地账号名。\n3. 打开「客户端 → 创建客户端」，类型选择「桌面应用（Desktop app）」，创建成功后立即下载并保管 OAuth 客户端 JSON，旧客户端页面可能无法再次下载原始密钥。官方说明：[Desktop OAuth client guide](https://developers.google.com/workspace/guides/create-credentials#desktop-app)。\n4. 安装并启用插件，打开「账号与授权 → 连接 Google 账号」，首次连接时，Web 选择下载的 JSON 文件后自动解析并提交；移动端在受保护输入框中粘贴 JSON 内容，后续连接复用原生配置。\n5. 选择只读或读写权限，在自己的浏览器中打开链接，登录 Google 并同意授权。\n6. 将地址栏中的完整 localhost 回跳地址粘贴回面板，即使该页面打不开。\n\n项目不提供共享 OAuth 应用。gws 在你的 Host 中原生保存应用配置与账号令牌，并刷新令牌。凭证不要粘贴到聊天中。\n\nAPI 按需启用：账号授权成功不代表未开启的 API 也能使用。Google 控制配额、应用验证与组织访问。支持个人 Google 账号，上述能力无需购买 Workspace 企业订阅。上游 CLI 并非 Google 正式支持的产品。\n\n上游指引：[gws authentication](https://github.com/googleworkspace/cli#authentication)\n\n检索内容会进入你的 Agent 上下文，并可能交给你选择的模型服务处理。"
+    },
+    "icon": "/assets/plugins/google-workspace/icon.png",
+    "version": "0.1.0",
+    "maintainer": "Go Bot",
+    "license": "MIT",
+    "tutorials": [
+      {
+        "language": "en",
+        "title": "Set up your Google application and enable APIs as needed",
+        "video": "/assets/plugins/google-workspace/account-setup.en.mp4",
+        "poster": "/assets/plugins/google-workspace/account-setup.en.png"
+      },
+      {
+        "language": "zh-CN",
+        "title": "创建自己的 Google 应用并按需启用 API",
+        "video": "/assets/plugins/google-workspace/account-setup.zh-CN.mp4",
+        "poster": "/assets/plugins/google-workspace/account-setup.zh-CN.png"
+      }
+    ],
+    "source": {
+      "type": "tarball",
+      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/google-workspace-v0.1.0/go-bot-plugin-google-workspace-0.1.0.tgz"
+    },
+    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/google-workspace-v0.1.0/",
+    "builds": [
+      "@go-bot/plugin-google-workspace"
+    ]
+  },
+  {
+    "pluginId": "gemini-api",
+    "package": "@go-bot/plugin-gemini-api",
+    "name": "Gemini API CLI",
+    "description": {
+      "en": "Generate and edit images, create speech, music and video, analyze files and run research with the official gemini-api CLI.\n\n1. Open [Google AI Studio API Keys](https://aistudio.google.com/apikey) and create a Gemini API key for your own project. Google controls model availability, regional access, quotas and billing.\n2. Install and enable this plugin, open Accounts and authorization, then choose Configure API Key. Enter your key in the protected field. A live model-list request checks access before saving; it does not generate content.\n3. Return to chat and describe your task. The Agent can inspect official command help, use Gemini and deliver the resulting files.\n\nOnly API-key authentication is offered. Configuration is saved in the official default location /root/.config/gemini-api/config.yaml inside your Host. It survives a stop/start of that container; replacing the container requires configuring the key again. It is not stored in Redis or the workspace.\n\nInputs supplied to the CLI are processed by Google. Paid capabilities use your Google project's quota and billing. The CLI is a beta release; available commands and models may change.\n\nOfficial guide: [Gemini API CLI](https://aistudio.google.com/docs/cli).",
+      "zh-CN": "通过官方 gemini-api CLI 生成与编辑图片、合成语音、制作音乐和视频、分析文件并开展研究。\n\n1. 打开 [Google AI Studio API Keys](https://aistudio.google.com/apikey)，在自己的项目中创建 Gemini API Key。可用模型、地区限制、配额和计费由 Google 管理。\n2. 安装并启用插件，打开「账号与授权」，点击「配置 API Key」，在受保护输入框中填写密钥。保存前会请求在线模型列表检查访问权限，不生成内容。\n3. 返回会话描述任务，Agent 可以查阅官方命令帮助，调用 Gemini 并交付生成的文件。\n\n仅提供 API Key 认证。配置保存在 Host 的官方默认位置 /root/.config/gemini-api/config.yaml。同一容器停止再启动后保留，删除并重建容器后需要重新配置；不存入 Redis 或工作区。\n\n传给 CLI 的输入会由 Google 处理，付费能力使用你自己的 Google 项目额度并计费。此 CLI 为 beta，命令与可用模型可能变化。\n\n官方指引：[Gemini API CLI](https://aistudio.google.com/docs/cli)。"
+    },
+    "icon": "/assets/plugins/gemini-api/icon.png",
+    "version": "0.1.0",
+    "maintainer": "Go Bot",
+    "license": "MIT",
+    "source": {
+      "type": "tarball",
+      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/gemini-api-v0.1.0/go-bot-plugin-gemini-api-0.1.0.tgz"
+    },
+    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/gemini-api-v0.1.0/",
+    "builds": [
+      "@go-bot/plugin-gemini-api"
+    ]
+  }
+]

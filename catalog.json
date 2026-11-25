@@ -13,9 +13,9 @@
     "license": "MIT",
     "source": {
       "type": "tarball",
-      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/agent-browser-v0.1.0/go-bot-plugin-agent-browser-0.1.0.tgz"
+      "spec": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/agent-browser-v0.1.0/go-bot-plugin-agent-browser-0.1.0.tgz"
     },
-    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/agent-browser-v0.1.0/",
+    "assetBase": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/agent-browser-v0.1.0/",
     "builds": [
       "@go-bot/plugin-agent-browser"
     ],
@@ -35,9 +35,9 @@
     "license": "MIT",
     "source": {
       "type": "tarball",
-      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/officecli-v0.1.0/go-bot-plugin-officecli-0.1.0.tgz"
+      "spec": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/officecli-v0.1.0/go-bot-plugin-officecli-0.1.0.tgz"
     },
-    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/officecli-v0.1.0/",
+    "assetBase": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/officecli-v0.1.0/",
     "builds": [
       "@go-bot/plugin-officecli"
     ],
@@ -71,9 +71,9 @@
     ],
     "source": {
       "type": "tarball",
-      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/x-v0.1.1/go-bot-plugin-x-0.1.1.tgz"
+      "spec": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/x-v0.1.1/go-bot-plugin-x-0.1.1.tgz"
     },
-    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/x-v0.1.1/",
+    "assetBase": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/x-v0.1.1/",
     "builds": [
       "@go-bot/plugin-x"
     ]
@@ -106,9 +106,9 @@
     ],
     "source": {
       "type": "tarball",
-      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/google-workspace-v0.1.0/go-bot-plugin-google-workspace-0.1.0.tgz"
+      "spec": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/google-workspace-v0.1.0/go-bot-plugin-google-workspace-0.1.0.tgz"
     },
-    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/google-workspace-v0.1.0/",
+    "assetBase": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/google-workspace-v0.1.0/",
     "builds": [
       "@go-bot/plugin-google-workspace"
     ]
@@ -127,9 +127,9 @@
     "license": "MIT",
     "source": {
       "type": "tarball",
-      "spec": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/gemini-api-v0.1.0/go-bot-plugin-gemini-api-0.1.0.tgz"
+      "spec": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/gemini-api-v0.1.0/go-bot-plugin-gemini-api-0.1.0.tgz"
     },
-    "assetBase": "https://github.com/xyc999-ai/got-bot-plugins/releases/download/gemini-api-v0.1.0/",
+    "assetBase": "https://github.com/xyc999-ai/go-bot-plugins/releases/download/gemini-api-v0.1.0/",
     "builds": [
       "@go-bot/plugin-gemini-api"
     ]

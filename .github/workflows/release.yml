@@ -1,5 +1,7 @@
 name: Publish plugins
 on:
+  push:
+    tags: ['plugins-release-*']
   workflow_dispatch:
     inputs:
       plugin:
@@ -23,11 +25,11 @@ jobs:
           node-version: '24.22.3'
       - uses: docker/setup-buildx-action@v3
       - name: Prepare original upstream Skills and pack plugins
-        run: docker buildx build --file build/Dockerfile.pack --build-arg PLUGIN='${{ inputs.plugin }}' --output type=local,dest=out .
+        run: docker buildx build --file build/Dockerfile.pack --build-arg PLUGIN='${{ inputs.plugin || 'all' }}' --output type=local,dest=out .
       - name: Publish complete releases
         env:
           GH_TOKEN: ${{ github.token }}
-        run: node scripts/publish.mjs '${{ inputs.plugin }}' out
+        run: node scripts/publish.mjs '${{ inputs.plugin || 'all' }}' out
       - name: Update the public catalog
         run: |
           git config user.name github-actions[bot]

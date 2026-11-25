@@ -55,3 +55,5 @@ docker buildx build -f build/Dockerfile.pack \
 
 插件接口见主仓库 [SDK 文档](https://github.com/xyc999-ai/go-bot/tree/main/extensions/sdk)。
 仓库采用 MIT，各插件保留上游许可和第三方声明。
+
+维护者也可以推送显式的批次发布标签来发布全部包，例如 `git tag plugins-release-20261126 && git push origin plugins-release-20261126`。普通代码提交不会发布安装包。

@@ -75,3 +75,5 @@ handwritten market description.
 
 MIT. Each plugin includes upstream licenses and third-party notices. Original
 upstream Skills and assets retain their respective notices.
+
+A maintainer can also publish all packages by pushing an explicit batch-release tag, e.g. `git tag plugins-release-20261126 && git push origin plugins-release-20261126`. Ordinary commits do not publish packages.

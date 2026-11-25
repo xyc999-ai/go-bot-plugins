@@ -1,0 +1,24 @@
+{
+  "name": "@go-bot/plugin-google-workspace",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Use Gmail, Drive, Calendar, Docs, Sheets and Slides with the official gws CLI and upstream Skills.",
+  "license": "MIT",
+  "exports": "./src/index.mjs",
+  "files": [
+    "src/",
+    "scripts/",
+    "skills/",
+    "plugin.json",
+    "assets/",
+    "LICENSE",
+    "UPSTREAM_LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "goBot": {
+    "api": "1"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/install.mjs"
+  }
+}

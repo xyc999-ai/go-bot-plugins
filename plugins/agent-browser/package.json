@@ -1,0 +1,25 @@
+{
+  "name": "@go-bot/plugin-agent-browser",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Official agent-browser CLI and upstream Skills for Go Bot",
+  "license": "MIT",
+  "exports": "./src/index.mjs",
+  "files": [
+    "src/",
+    "skills/",
+    "upstream.lock.json",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE",
+    "UPSTREAM_LICENSE",
+    "scripts/",
+    "plugin.json",
+    "assets/"
+  ],
+  "goBot": {
+    "api": "1"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/install.mjs"
+  }
+}

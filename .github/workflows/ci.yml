@@ -1,0 +1,19 @@
+name: Plugin checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.22.3'
+      - run: npm --prefix plugins/x ci --ignore-scripts --no-audit --no-fund
+      - run: npm --prefix plugins/gemini-api ci --ignore-scripts --no-audit --no-fund
+      - run: npm test
+      - run: npm run check

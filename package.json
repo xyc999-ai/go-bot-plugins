@@ -1,0 +1,13 @@
+{
+  "name": "go-bot-plugins",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/catalog.mjs check",
+    "pack": "node scripts/catalog.mjs pack"
+  },
+  "engines": {
+    "node": ">=24.9.0"
+  }
+}

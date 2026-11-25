@@ -1,0 +1,11 @@
+{
+  "name": "OfficeCLI",
+  "description": {
+    "en": "Create, read and edit Word, PowerPoint and Excel with the official CLI and 11 upstream Skills.",
+    "zh-CN": "通过官方 CLI 和 11 个原始 Skills 创建、读取和编辑 Word、PPT、Excel。"
+  },
+  "icon": "/assets/plugins/officecli/icon.png",
+  "version": "0.1.0",
+  "maintainer": "Go Bot",
+  "license": "MIT"
+}

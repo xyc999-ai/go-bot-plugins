@@ -1,0 +1,11 @@
+FROM node:24.22.3-trixie-slim AS pack
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates bash git libicu76 python3 && rm -rf /var/lib/apt/lists/*
+WORKDIR /work
+COPY plugins/ ./plugins/
+COPY scripts/ ./scripts/
+COPY catalog.json ./
+RUN bash scripts/prepare-upstream.sh
+ARG PLUGIN=all
+RUN node scripts/catalog.mjs pack "$PLUGIN" /out
+FROM scratch
+COPY --from=pack /out/ /

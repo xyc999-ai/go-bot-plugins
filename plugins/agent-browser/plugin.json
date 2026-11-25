@@ -1,0 +1,11 @@
+{
+  "name": "agent-browser",
+  "description": {
+    "en": "Browse websites, interact with pages, capture screenshots and download files with the official CLI and upstream Skill.",
+    "zh-CN": "通过官方 CLI 和原始 Skill 浏览网页、操作页面、截图与下载文件。"
+  },
+  "icon": "/assets/plugins/agent-browser/icon.png",
+  "version": "0.1.0",
+  "maintainer": "Go Bot",
+  "license": "MIT"
+}

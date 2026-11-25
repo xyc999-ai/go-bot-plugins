@@ -1,0 +1,12 @@
+{
+  "name": "@go-bot/plugin-gemini-api",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Use the official Gemini API CLI for media generation, file analysis and research.",
+  "license": "MIT",
+  "exports": "./src/index.mjs",
+  "files": ["src/", "scripts/", "plugin.json", "assets/", "LICENSE", "UPSTREAM_LICENSE", "THIRD_PARTY_NOTICES.md"],
+  "goBot": { "api": "1" },
+  "scripts": { "postinstall": "node ./scripts/install.mjs" },
+  "dependencies": { "yaml": "^2.8.1" }
+}

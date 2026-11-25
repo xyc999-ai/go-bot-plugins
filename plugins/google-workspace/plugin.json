@@ -1,0 +1,25 @@
+{
+  "name": "Google Workspace",
+  "description": {
+    "en": "Use Gmail, Drive, Calendar, Docs, Sheets and Slides with the official gws CLI and upstream Skills.\n\n1. Create or select your own project at [Google Cloud Console](https://console.cloud.google.com/). In APIs & Services → Library, enable only the APIs you need: Drive, Gmail, Calendar, Docs, Sheets or Slides.\n2. Configure Google Auth Platform branding and an External audience. While the app is in Testing, add the Google account email you will sign in with under Audience → Test users. This is your Google email, not your Go Bot username.\n3. Open Clients → Create client → Desktop app. Download and keep the OAuth client JSON immediately after creation; an existing client may no longer offer the original secret for download. See [Desktop OAuth client guide](https://developers.google.com/workspace/guides/create-credentials#desktop-app).\n4. Install and enable this plugin. Open Accounts and authorization → Connect Google account. On Web, choose the downloaded JSON file to parse and submit it automatically. On mobile, paste its contents into the protected input on first connection; later connections reuse your native configuration.\n5. Choose read-only or read-and-write permissions. Open the link in your browser, sign in to Google and approve access.\n6. Copy the complete localhost redirect URL from the address bar into the panel, even if the local page cannot open.\n\nThe project does not supply a shared OAuth application. gws stores your application configuration and account tokens in your Host and refreshes tokens natively. Never paste credentials in chat.\n\nEnable APIs as needed; a disabled API cannot be used even after account authorization. Google controls quotas, app verification and organization access. Personal Google accounts are supported; these features do not require a paid Workspace subscription. The upstream CLI is not an officially supported Google product.\n\nUpstream guide: [gws authentication](https://github.com/googleworkspace/cli#authentication)\n\nRetrieved content enters your Agent context and may be processed by your selected model provider.",
+    "zh-CN": "通过原生 gws CLI 和上游 Skills 使用 Gmail、Drive、日历、文档、表格与幻灯片。\n\n1. 在 [Google Cloud Console](https://console.cloud.google.com/) 创建或选择自己的项目。在「API 和服务 → 库」中按需启用 Drive、Gmail、Calendar、Docs、Sheets 或 Slides API，无需一次全部开启。\n2. 配置 Google Auth Platform 的品牌信息与「外部」受众。应用处于「测试」状态时，在「受众 → 测试用户」中添加准备登录的 Google 邮箱。这里不是 Go Bot 本地账号名。\n3. 打开「客户端 → 创建客户端」，类型选择「桌面应用（Desktop app）」，创建成功后立即下载并保管 OAuth 客户端 JSON，旧客户端页面可能无法再次下载原始密钥。官方说明：[Desktop OAuth client guide](https://developers.google.com/workspace/guides/create-credentials#desktop-app)。\n4. 安装并启用插件，打开「账号与授权 → 连接 Google 账号」，首次连接时，Web 选择下载的 JSON 文件后自动解析并提交；移动端在受保护输入框中粘贴 JSON 内容，后续连接复用原生配置。\n5. 选择只读或读写权限，在自己的浏览器中打开链接，登录 Google 并同意授权。\n6. 将地址栏中的完整 localhost 回跳地址粘贴回面板，即使该页面打不开。\n\n项目不提供共享 OAuth 应用。gws 在你的 Host 中原生保存应用配置与账号令牌，并刷新令牌。凭证不要粘贴到聊天中。\n\nAPI 按需启用：账号授权成功不代表未开启的 API 也能使用。Google 控制配额、应用验证与组织访问。支持个人 Google 账号，上述能力无需购买 Workspace 企业订阅。上游 CLI 并非 Google 正式支持的产品。\n\n上游指引：[gws authentication](https://github.com/googleworkspace/cli#authentication)\n\n检索内容会进入你的 Agent 上下文，并可能交给你选择的模型服务处理。"
+  },
+  "icon": "/assets/plugins/google-workspace/icon.png",
+  "version": "0.1.0",
+  "maintainer": "Go Bot",
+  "license": "MIT",
+  "tutorials": [
+    {
+      "language": "en",
+      "title": "Set up your Google application and enable APIs as needed",
+      "video": "/assets/plugins/google-workspace/account-setup.en.mp4",
+      "poster": "/assets/plugins/google-workspace/account-setup.en.png"
+    },
+    {
+      "language": "zh-CN",
+      "title": "创建自己的 Google 应用并按需启用 API",
+      "video": "/assets/plugins/google-workspace/account-setup.zh-CN.mp4",
+      "poster": "/assets/plugins/google-workspace/account-setup.zh-CN.png"
+    }
+  ]
+}

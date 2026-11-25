@@ -1,0 +1,27 @@
+{
+  "name": "@go-bot/plugin-x",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "Connect X with the official xurl MCP bridge and native account authorization.",
+  "license": "MIT",
+  "exports": "./src/index.mjs",
+  "files": [
+    "src/",
+    "scripts/",
+    "skills/",
+    "plugin.json",
+    "assets/",
+    "LICENSE",
+    "UPSTREAM_LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "goBot": {
+    "api": "1"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/install.mjs"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1"
+  }
+}

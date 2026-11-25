@@ -1,0 +1,11 @@
+{
+  "name": "Gemini API CLI",
+  "description": {
+    "en": "Generate and edit images, create speech, music and video, analyze files and run research with the official gemini-api CLI.\n\n1. Open [Google AI Studio API Keys](https://aistudio.google.com/apikey) and create a Gemini API key for your own project. Google controls model availability, regional access, quotas and billing.\n2. Install and enable this plugin, open Accounts and authorization, then choose Configure API Key. Enter your key in the protected field. A live model-list request checks access before saving; it does not generate content.\n3. Return to chat and describe your task. The Agent can inspect official command help, use Gemini and deliver the resulting files.\n\nOnly API-key authentication is offered. Configuration is saved in the official default location /root/.config/gemini-api/config.yaml inside your Host. It survives a stop/start of that container; replacing the container requires configuring the key again. It is not stored in Redis or the workspace.\n\nInputs supplied to the CLI are processed by Google. Paid capabilities use your Google project's quota and billing. The CLI is a beta release; available commands and models may change.\n\nOfficial guide: [Gemini API CLI](https://aistudio.google.com/docs/cli).",
+    "zh-CN": "通过官方 gemini-api CLI 生成与编辑图片、合成语音、制作音乐和视频、分析文件并开展研究。\n\n1. 打开 [Google AI Studio API Keys](https://aistudio.google.com/apikey)，在自己的项目中创建 Gemini API Key。可用模型、地区限制、配额和计费由 Google 管理。\n2. 安装并启用插件，打开「账号与授权」，点击「配置 API Key」，在受保护输入框中填写密钥。保存前会请求在线模型列表检查访问权限，不生成内容。\n3. 返回会话描述任务，Agent 可以查阅官方命令帮助，调用 Gemini 并交付生成的文件。\n\n仅提供 API Key 认证。配置保存在 Host 的官方默认位置 /root/.config/gemini-api/config.yaml。同一容器停止再启动后保留，删除并重建容器后需要重新配置；不存入 Redis 或工作区。\n\n传给 CLI 的输入会由 Google 处理，付费能力使用你自己的 Google 项目额度并计费。此 CLI 为 beta，命令与可用模型可能变化。\n\n官方指引：[Gemini API CLI](https://aistudio.google.com/docs/cli)。"
+  },
+  "icon": "/assets/plugins/gemini-api/icon.png",
+  "version": "0.1.0",
+  "maintainer": "Go Bot",
+  "license": "MIT"
+}

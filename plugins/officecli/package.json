@@ -1,0 +1,24 @@
+{
+  "name": "@go-bot/plugin-officecli",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Official officecli CLI and upstream Skills for Go Bot",
+  "license": "MIT",
+  "exports": "./src/index.mjs",
+  "files": [
+    "src/",
+    "skills/",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE",
+    "UPSTREAM_LICENSE",
+    "scripts/",
+    "plugin.json",
+    "assets/"
+  ],
+  "goBot": {
+    "api": "1"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/install.mjs"
+  }
+}

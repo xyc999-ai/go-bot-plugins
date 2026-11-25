@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/vercel-labs/agent-browser",
+  "version": "0.43.0",
+  "installation": "npm install -g agent-browser@0.43.0",
+  "skillRef": "1cc19526f3641c8543d55aa6700e7c55b37ac356",
+  "skillsCLI": "1.8.1"
+}

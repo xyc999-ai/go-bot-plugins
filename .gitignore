@@ -1,0 +1,14 @@
+node_modules/
+.local/
+dist/
+out/
+*.tgz
+*.log
+.DS_Store
+.env
+.env.*
+*.token
+.credentials*
+plugins/agent-browser/skills/
+plugins/officecli/skills/
+plugins/google-workspace/skills/

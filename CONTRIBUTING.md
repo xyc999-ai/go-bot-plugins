@@ -1,0 +1,3 @@
+# Contributing
+
+Use topic branches such as feat/calendar or fix/x-authorization, and Conventional Commit messages. Each plugin has an independent version; keep package.json and plugin.json versions consistent. Run npm test and npm run check before proposing a change. Prepare and pack releases with the documented container workflow. Never overwrite a published release or remove historical catalog entries that deployed users may still select. Business plugins use the Host-provided Cordis framework and SDK; declare framework types as development dependencies or optional peers.

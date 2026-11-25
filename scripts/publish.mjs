@@ -1,7 +1,7 @@
 import { readdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { execFileSync } from 'node:child_process'
-import { root, repository, pluginIds, readJSON, mergeCatalog } from './catalog.mjs'
+import { root, repository, pluginIds, readJSON, mergeCatalog, sameReleaseMetadata } from './catalog.mjs'
 
 const [selected = 'all', output = join(root, 'out')] = process.argv.slice(2)
 const ids = selected === 'all' ? pluginIds : [selected]
@@ -21,7 +21,7 @@ for (const entry of releases) {
     const asset = existing.assets.find(value => value.name === 'release.json')
     if (!asset) throw new Error(tag + ': incomplete existing release; inspect it before retrying')
     const remote = await fetch(entry.assetBase + 'release.json')
-    if (!remote.ok || JSON.stringify(await remote.json()) !== JSON.stringify(entry)) throw new Error(tag + ': existing release differs; bump the plugin version')
+    if (!remote.ok || !sameReleaseMetadata(await remote.json(), entry)) throw new Error(tag + ': existing release differs; bump the plugin version')
     if (files.some(file => !existing.assets.some(asset => asset.name === file.split('/').at(-1)))) throw new Error(tag + ': existing release is missing assets')
     continue
   }

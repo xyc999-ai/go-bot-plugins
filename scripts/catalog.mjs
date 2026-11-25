@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
 
 export const root = fileURLToPath(new URL('../', import.meta.url))
-export const repository = 'xyc999-ai/got-bot-plugins'
+export const repository = 'xyc999-ai/go-bot-plugins'
 export const pluginIds = ['agent-browser', 'officecli', 'x', 'google-workspace', 'gemini-api']
 export const readJSON = async path => JSON.parse(await readFile(path, 'utf8'))
 
@@ -28,6 +28,22 @@ export async function metadata(id, directory = join(root, 'plugins', id)) {
     source: { type: 'tarball', spec: base + archive }, assetBase: base,
     builds: [pkg.name], ...(['agent-browser', 'officecli'].includes(id) ? { defaultEnabled: true } : {}),
   }
+}
+
+// An existing release.json remains immutable when its GitHub repository is
+// renamed. Ignore only the repository prefix of GitHub release download URLs;
+// package identity, asset paths and every other metadata field must still match.
+export function sameReleaseMetadata(left, right) {
+  const atCurrentRepository = entry => {
+    const copy = structuredClone(entry)
+    const canonicalURL = value => typeof value === 'string'
+      ? value.replace(/^https:\/\/github\.com\/[^/]+\/[^/]+(?=\/releases\/download\/)/, `https://github.com/${repository}`)
+      : value
+    if (copy.source?.type === 'tarball') copy.source.spec = canonicalURL(copy.source.spec)
+    if (copy.assetBase) copy.assetBase = canonicalURL(copy.assetBase)
+    return copy
+  }
+  return JSON.stringify(atCurrentRepository(left)) === JSON.stringify(atCurrentRepository(right))
 }
 
 export function mergeCatalog(previous, entries) {

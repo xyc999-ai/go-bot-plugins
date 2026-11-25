@@ -24,7 +24,7 @@ Go Bot 读取 [catalog.json](catalog.json)，通过 pnpm 安装选定版本，�
 
 ## 开发与发布
 
-需要 Node.js 24.9+，发布打包还需要 Docker：
+需要 Node.js 24.9+。发布准备直接在 GitHub Actions 临时 Linux 运行器执行，使用 Bash、Git 和 Python，不需要 Docker：
 
 ```bash
 npm --prefix plugins/x ci --ignore-scripts
@@ -38,15 +38,15 @@ npm run check
 框架实例，Cordis / SDK 类型放在开发依赖或可选 peer 中，不放入生产依赖。
 
 发布时同时递增 package.json 与 plugin.json 的版本，在 GitHub Actions 中手动
-运行 **Publish plugins**，选择单个插件或全部插件。工作流在隔离容器中通过官方
+运行 **Publish plugins**，选择单个插件或全部插件。工作流直接在临时 Linux 运行器中通过官方
 方式准备原始 Skills，再执行 `npm pack`，上传 `<插件>-v<版本>` Release；完整上传
 成功后才更新市场清单，保留历史版本。展示文案、图标和教程取自 plugin.json。
 
-本地预览安装包，不会发布或修改市场：
+也可在 Linux 本地预览安装包。此步骤会全局安装官方 CLI 并准备 Skills，但不会发布或修改市场；正常发布使用 Actions 临时运行器，无需本地准备：
 
 ```bash
-docker buildx build -f build/Dockerfile.pack \
-  --build-arg PLUGIN=all --output type=local,dest=out .
+bash scripts/prepare-upstream.sh
+node scripts/catalog.mjs pack all out
 ```
 
 结果位于 `out/<插件>/`，包括 tgz、展示资源及自动生成的 release.json。

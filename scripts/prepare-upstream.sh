@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Assemble original upstream Skills into first-party plugin packages.
-# Runs in the isolated plugin release build, never on the developer workstation.
+# Runs on the temporary Linux release runner; local use installs official CLIs globally.
 set -euo pipefail
 cd "$(dirname "$0")/../plugins"
 export DISABLE_TELEMETRY=1

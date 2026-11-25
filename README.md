@@ -26,7 +26,7 @@ installations keep their selected versions; a new release offers an update.
 
 ## Develop
 
-Requires Node.js 24.9+; release packaging also needs Docker.
+Requires Node.js 24.9+. Release preparation runs on a temporary Linux GitHub Actions runner with Bash, Git and Python; Docker is not required.
 
 ```bash
 npm --prefix plugins/x ci --ignore-scripts
@@ -50,7 +50,7 @@ dependencies and optional peer declarations for types.
 
 1. Change the plugin and bump both manifest versions. Run the checks above.
 2. In GitHub Actions, run **Publish plugins** on `main`, choosing a plugin or `all`.
-3. The workflow prepares original upstream Skills in an isolated container,
+3. The workflow prepares original upstream Skills directly on its temporary Linux runner,
    runs `npm pack`, and uploads a complete `<plugin>-v<version>` GitHub Release.
 4. Only after the release assets exist does it update `catalog.json`, preserving
    older releases. Refresh the market to see the newly published version.
@@ -59,11 +59,11 @@ Do not modify executable packages or assets in an already published release.
 Publish a new version. If upload succeeded but the catalog update failed, retry
 the workflow; it checks the completed release before adding the catalog entry.
 
-Local packaging preview (does not publish or modify the market):
+Optional local packaging preview on Linux (installs the official CLIs globally and prepares Skills; does not publish or modify the market). Normal releases use the temporary Actions runner, so no local preparation is needed:
 
 ```bash
-docker buildx build -f build/Dockerfile.pack \
-  --build-arg PLUGIN=all --output type=local,dest=out .
+bash scripts/prepare-upstream.sh
+node scripts/catalog.mjs pack all out
 ```
 
 `out/<plugin>/` contains the standard tarball, icon/tutorial resources and a
